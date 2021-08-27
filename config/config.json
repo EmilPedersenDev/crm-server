@@ -19,6 +19,6 @@
     "database": "debaiqjtvl4fr8",
     "host": "ec2-54-228-139-34.eu-west-1.compute.amazonaws.com",
     "dialect": "postgres",
-    "use_env_variable": "DATABASE_URL"
+    "use_env_variable": "postgres://yhqluyvwpukwdb:1ef45721bf60c7949884056de6fc8a4972eb2a3471affe806a0bead0d162d7f0@ec2-54-228-139-34.eu-west-1.compute.amazonaws.com:5432/debaiqjtvl4fr8"
   }
 }
