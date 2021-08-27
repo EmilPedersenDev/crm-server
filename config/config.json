@@ -14,10 +14,10 @@
     "dialect": "postgres"
   },
   "production": {
-    "username": "postgres",
-    "password": "Kalleballe#10",
-    "database": "crm",
-    "host": "127.0.0.1",
+    "username": "yhqluyvwpukwdb",
+    "password": "1ef45721bf60c7949884056de6fc8a4972eb2a3471affe806a0bead0d162d7f0",
+    "database": "debaiqjtvl4fr8",
+    "host": "ec2-54-228-139-34.eu-west-1.compute.amazonaws.com",
     "dialect": "postgres",
     "use_env_variable": "DATABASE_URL"
   }
