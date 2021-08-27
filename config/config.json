@@ -9,15 +9,16 @@
   "test": {
     "username": "postgres",
     "password": "Kalleballe#10",
-    "database": "crm-test",
+    "database": "crm",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
     "username": "postgres",
     "password": "Kalleballe#10",
-    "database": "crm-prod",
+    "database": "crm",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "use_env_variable": "DATABASE_URL"
   }
 }
