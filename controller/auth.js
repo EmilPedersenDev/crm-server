@@ -24,21 +24,9 @@ module.exports = (app) => {
 
       const token = login(res, req.body, user);
 
-      return res
-        .cookie("access_token", token, {
-          secure: process.env.NODE_ENV === "production",
-          sameSite: process.env.NODE_ENV === "production" ? "none" : "",
-        })
-        .status(200)
-        .json(user);
+      return res.status(200).json({ user: user, token: token });
     } catch (err) {
       return res.status(500).json(err.message);
     }
-  });
-
-  app.get("/auth/logout", (req, res) => {
-    return res.clearCookie("access_token").status(200).json({
-      message: "Logged out",
-    });
   });
 };
