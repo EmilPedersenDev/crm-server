@@ -27,6 +27,7 @@ module.exports = (app) => {
       return res
         .cookie("access_token", token, {
           secure: process.env.NODE_ENV === "production",
+          sameSite: process.env.NODE_ENV === "production" ? "none" : "",
         })
         .status(200)
         .json(user);

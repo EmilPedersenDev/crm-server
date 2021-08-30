@@ -11,6 +11,7 @@ exports.login = (res, userRequest, user) => {
     return res
       .cookie("access_token", "", {
         secure: process.env.NODE_ENV === "production",
+        sameSite: process.env.NODE_ENV === "production" ? "none" : "",
       })
       .status(401)
       .send({
