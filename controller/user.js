@@ -1,5 +1,6 @@
 const db = require("../models");
 const User = db.User;
+const authorization = require("../middleware/auth.middleware");
 
 module.exports = (app) => {
   app.post("/user", async (req, res) => {
@@ -20,14 +21,19 @@ module.exports = (app) => {
     }
   });
 
-  app.get("/user", async (req, res) => {
+  app.get("/user/:id", authorization, async (req, res) => {
     try {
-      const users = await User.findAll();
-      if (!users) {
-        throw new Error("no users provided!");
+      const { id } = req.params;
+      const user = await User.findOne({
+        where: {
+          id: id,
+        },
+      });
+      if (!user) {
+        throw new Error("no user provided!");
       }
 
-      res.json(users);
+      res.json(user);
     } catch (err) {
       res.status(500).json(err.message);
     }
