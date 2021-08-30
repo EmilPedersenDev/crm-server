@@ -8,15 +8,9 @@ exports.login = (res, userRequest, user) => {
   );
 
   if (!isPasswordMatching) {
-    return res
-      .cookie("access_token", "", {
-        secure: process.env.NODE_ENV === "production",
-        sameSite: process.env.NODE_ENV === "production" ? "none" : "",
-      })
-      .status(401)
-      .send({
-        message: "Invalid Password",
-      });
+    return res.status(401).send({
+      message: "Invalid Password",
+    });
   }
 
   const token = jwt.sign({ id: user.id, name: user.name }, process.env.SECRET, {
