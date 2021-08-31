@@ -28,6 +28,9 @@ app.use((req, res, next) => {
 
 require("./controller/user")(app);
 require("./controller/auth")(app);
+require("./controller/contact")(app);
+require("./controller/company")(app);
+require("./controller/sales")(app);
 
 app.get("/", (req, res) => {
   res.json({
